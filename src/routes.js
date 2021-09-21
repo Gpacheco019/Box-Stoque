@@ -8,6 +8,7 @@ const Category = require('./controller/CategoryController')
 routes.get('/categoria', Category.getAllCategory)
 routes.post('/categoria', Category.createCategory)
 routes.delete('/categoria/:id', Category.deleteCategory)
+routes.put('/category/:id', Category.editCategory)
 
 
 

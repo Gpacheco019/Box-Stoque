@@ -33,6 +33,21 @@ module.exports = {
     } catch (err) {
       next(err)
     }
+  },
+
+  async editCategory(req, res, next) {
+    try {
+      const { category_name } = req.body
+      const { id } = req.params
+
+      await knex('category')
+        .update({ category_name })
+        .where({id})
+        
+      return res.send('Categoria atualizada.')
+    } catch (err) {
+      next(err)
+    }
   }
   
 }
